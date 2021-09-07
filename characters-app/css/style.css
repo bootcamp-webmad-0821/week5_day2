@@ -1,0 +1,32 @@
+body {
+    padding: 50px 0;
+    font-weight: 200;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 200;
+}
+
+#characters {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+}
+
+#characters li {
+    list-style: none;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+ input,  label {
+    width: 100%;
+}
+
+ input[type='submit']{
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+}

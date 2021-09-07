@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coasters yay!</title>
+</head>
+
+<body>
+
+    <h1 style="margin-top: 40px;">Listado de montañas rusas AJAX</h1>
+
+    <ul id="coasters"></ul>
+
+    <script>
+
+        setTimeout(getCoasters, 5000)
+
+
+        function getCoasters() {
+            fetch('https://coasters-api.herokuapp.com/')
+                .then(results => results.json())
+                .then(coasters => {
+                    console.log('ESTAS SON LAS MONTAÑAS RUSAS:', coasters)
+                    printCoasters(coasters)
+                })
+                .catch(err => console.log('ERROR!', err))
+        }
+
+
+        function printCoasters(coasters) {
+
+            let text = ''
+            coasters.forEach(elm => text += `<li>${elm.name}, longitud ${elm.length}</li>`)
+            document.querySelector('#coasters').innerHTML = text
+        }
+
+    </script>
+
+</body>
+
+</html>
